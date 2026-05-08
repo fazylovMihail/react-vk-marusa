@@ -1,0 +1,58 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.search-modal {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 8px;
+  width: 559px;
+  max-height: 476px;
+  overflow-y: scroll;
+  background-color: $color-black-green;
+  border-radius: 8px;
+  z-index: 10;
+
+  @include vp-767 {
+    position: fixed;
+    top: 80px;
+    padding: 0 20px;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  &--no-result {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__list {
+    @include list-default;
+    display: inline-flex;
+    flex-direction: column;
+
+    @include vp-767 {
+      width: 100%;
+      overflow-x: scroll;
+      padding: 24px 20px;
+      flex-direction: row;
+      gap: 16px;
+      background-color: $color-black-green;
+      border-radius: 8px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

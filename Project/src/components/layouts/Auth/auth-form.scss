@@ -1,0 +1,97 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.auth-form {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: $color-black-50;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    position: relative;
+    padding: 0 72px;
+    display: flex;
+    align-items: flex-start;
+
+    @include vp-767 {
+      padding: 0 20px;
+    }
+  }
+
+  &__inner {
+    padding: 64px 40px;
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 24px;
+
+    @include vp-767 {
+      padding: 64px 20px 32px;
+      width: 335px;
+    }
+  }
+
+  &__logo-picture {
+    margin: 0 0 40px;
+
+    @include vp-767 {
+      margin: 0 0 32px;
+    }
+  }
+
+  &__logo-image {
+    @include vp-767 {
+      width: 134px;
+      height: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-black;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-black;
+    text-align: center;
+  }
+
+  &__inputs {
+    margin: 0 0 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__submit-btn {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include vp-767 {
+      top: 8px;
+      right: 28px;
+    }
+  }
+}

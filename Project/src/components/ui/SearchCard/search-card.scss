@@ -1,0 +1,40 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.search-card {
+  padding: 20px 8px;
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+
+  @include vp-767 {
+    padding: 0;
+    width: 220px;
+    min-height: 330px;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 40px;
+    height: 52px;
+
+    @include vp-767 {
+      width: 158px;
+      height: 206px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-white;
+  }
+}

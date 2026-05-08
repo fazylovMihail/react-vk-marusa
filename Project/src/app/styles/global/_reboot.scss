@@ -1,0 +1,43 @@
+@use "./variables" as *;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: $ff-play;
+  display: flex;
+  flex-direction: column;
+  background: 
+  /* Верхний темный слой */
+    linear-gradient(180deg, #000000 0%, rgba(39, 36, 36, 0.7) 70%),
+    /* Нижний цветной слой с прозрачностью 90% */
+    linear-gradient(
+        178.73deg,
+        rgba(39, 135, 245, 0.9) -17.53%,
+        rgba(163, 147, 245, 0.9) 131.74%
+      );
+  background-color: #000;
+  color: $color-white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 1;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}

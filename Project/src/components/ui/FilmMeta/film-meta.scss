@@ -1,0 +1,68 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.film-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &--mini {
+    gap: 12px;
+
+    @include vp-767 {
+      flex-wrap: wrap;
+    }
+
+    .film-meta__grade {
+      padding: 2px 8px;
+      font-size: 12px;
+      line-height: 16px;
+
+      & svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .film-meta__label {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__grade {
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: $color-dark-scarlet;
+    color: $color-white;
+    border-radius: 16px;
+
+    &--gray {
+      background-color: $color-gray;
+    }
+
+    &--forest-green {
+      background-color: $color-forest-green;
+    }
+
+    &--golden {
+      background-color: $color-golden;
+    }
+  }
+
+  &__label {
+    color: $color-white-70;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

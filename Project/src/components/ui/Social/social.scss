@@ -1,0 +1,14 @@
+@use "../../../app//styles/global/variables" as *;
+@use "../../../app//styles/global/mixins" as *;
+
+.social {
+  &__icon {
+    width: 36px;
+    height: 36px;
+
+    @include vp-767 {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

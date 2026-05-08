@@ -1,0 +1,95 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app//styles//global/mixins" as *;
+
+.link {
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  padding: 8px 0;
+  font-family: $ff-play;
+  font-size: 24px;
+  line-height: 32px;
+  color: $color-white;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  outline: none;
+  transition:
+    color $transition-300,
+    border-color $transition-300;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-periwinkle;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
+
+  &--special {
+    border-color: $color-geliotrop;
+
+    @include vp-767 {
+      &:not(.link--always-icon) {
+        border: none;
+      }
+    }
+  }
+
+  &--without-icon {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &--always-icon {
+    align-items: center;
+    gap: 8px;
+
+    .link__icon {
+      display: block;
+    }
+  }
+
+  &--icon {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+    }
+  }
+
+  &--black {
+    padding: 0;
+    color: $color-black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__icon {
+    color: $color-white;
+    display: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__label {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__label-mini {
+    display: none;
+
+    @include vp-767 {
+      padding: 8px 0;
+      display: block;
+    }
+  }
+}

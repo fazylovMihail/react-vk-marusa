@@ -1,0 +1,1 @@
+export { HeroRandom } from "./HeroRandom";

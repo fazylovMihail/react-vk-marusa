@@ -1,0 +1,85 @@
+@use "../../../app/styles/global/variables" as *;
+
+.custom-input {
+  position: relative;
+
+  &--white {
+    .custom-input__field {
+      padding: 15px 15px 15px 51px;
+      background-color: transparent;
+      color: $color-black-40;
+      border: 1px solid $color-black-40;
+    }
+
+    .custom-input__icon {
+      color: $color-black-40;
+    }
+  }
+
+  &--error {
+    .custom-input__field {
+      border-color: $color-rich-pink;
+    }
+
+    .custom-input__icon {
+      color: $color-rich-pink;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    outline: none;
+    padding: 11px 15px 11px 51px;
+    font-family: $ff-play;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: $color-black-green;
+    color: $color-white-50;
+    border: 1px solid $color-black-green;
+    border-radius: 8px;
+    transition: border-color, $transition-300;
+
+    &[type="search"]::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border: 1px solid $color-periwinkle;
+
+      & ~ .custom-input__icon {
+        color: $color-periwinkle;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: $color-white-50;
+    pointer-events: none;
+    transition: color, $transition-300;
+  }
+
+  &__reset-btn {
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+
+    svg {
+      position: static;
+      transform: none;
+    }
+  }
+}

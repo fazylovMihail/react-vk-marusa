@@ -1,0 +1,153 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.profile {
+  padding: 64px 0 160px;
+
+  @include vp-767 {
+    padding: 16px 0 40px;
+  }
+
+  &__heading {
+    margin: 0 0 64px;
+    font-size: 48px;
+    line-height: 56px;
+
+    @include vp-767 {
+      margin: 0 0 40px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__actions {
+    margin: 0 0 64px;
+    display: flex;
+    gap: 64px;
+
+    @include vp-767 {
+      position: relative;
+      z-index: 1;
+      gap: 24px;
+    }
+  }
+
+  &__list {
+    @include list-default;
+    display: grid;
+    grid-template-columns: repeat(5, 224px);
+    gap: 64px 40px;
+
+    @include vp-767 {
+      padding: 80px 20px;
+      margin: -80px -20px;
+      overflow-x: auto;
+      display: flex;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__list-item {
+    position: relative;
+
+    &:hover {
+      & > .film-card {
+        border-color: $color-white;
+      }
+      & > .profile__item-delete {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__item-delete {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    border: none;
+    border-radius: 30px;
+    color: $color-black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-300;
+  }
+
+  &__info {
+    @include list-default;
+    margin: 0 0 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__card-avatar {
+    width: 60px;
+    height: 60px;
+    padding: 14px;
+    background-color: $color-white-50;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    @include vp-767 {
+      padding: 8px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__card-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__card-label {
+    font-size: 18px;
+    line-height: 24px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__card-title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__logout {
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+}
