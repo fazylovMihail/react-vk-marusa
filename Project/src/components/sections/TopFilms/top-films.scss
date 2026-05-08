@@ -32,8 +32,8 @@
       padding: 80px 20px;
       margin: -80px -20px;
       display: flex;
-      align-items: flex-start;
-      overflow-x: auto;
+      justify-content: flex-start;
+      overflow-x: scroll;
 
       &::-webkit-scrollbar {
         display: none;
