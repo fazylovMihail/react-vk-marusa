@@ -1,0 +1,77 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-blue-black-90;
+  overflow: hidden;
+  z-index: 99;
+
+  &__content {
+    width: min(100%, 1200px);
+    box-sizing: border-box;
+    padding: 0 72px;
+    position: relative;
+    z-index: 1;
+
+    @include vp-767 {
+      padding: 0;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid $color-white-50;
+    position: relative;
+    z-index: 1;
+
+    &--load {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $color-black-green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__video > div,
+  &__video iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__video > .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    pointer-events: auto;
+
+    @include vp-767 {
+      top: 8px;
+      right: 8px;
+    }
+  }
+}

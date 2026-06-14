@@ -1,0 +1,77 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.about-film {
+  padding: 40px 0 120px;
+
+  @include vp-767 {
+    padding: 32px 0;
+  }
+
+  &__heading {
+    margin: 0 0 64px;
+    font-size: 40px;
+    line-height: 48px;
+
+    @include vp-767 {
+      margin: 0 0 40px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__list {
+    @include list-default;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include vp-767 {
+      gap: 12px;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include vp-767 {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &__prop-name {
+    width: 320px;
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      position: relative;
+      bottom: 6px;
+      width: 100%;
+      border-bottom: 1px dashed $color-white-50;
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-white-50;
+    }
+  }
+
+  &__prop-value {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

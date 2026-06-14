@@ -1,0 +1,1 @@
+export { PostReg } from "./PostReg";

@@ -1,0 +1,20 @@
+@use "../../../app/styles/global/mixins" as *;
+
+.footer {
+  padding: 40px 0;
+
+  @include vp-767 {
+    padding: 24px 0;
+  }
+
+  &__socials {
+    @include list-default;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 24px;
+
+    @include vp-767 {
+      justify-content: flex-start;
+    }
+  }
+}

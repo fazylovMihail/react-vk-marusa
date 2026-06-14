@@ -1,0 +1,144 @@
+@use "../../../app/styles/global/variables" as *;
+@use "../../../app/styles/global/mixins" as *;
+
+.hero {
+  padding: 32px 0 0;
+
+  &--films {
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 0;
+    position: relative;
+    top: -8px;
+    z-index: 1;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 600px) minmax(0, 680px);
+    grid-auto-flow: column;
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  }
+
+  &__inner {
+    padding: 74px 40px 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include vp-767 {
+      padding: 24px 0;
+      gap: 32px;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include vp-767 {
+      gap: 12px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 56px;
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-white-70;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+
+    @include vp-767 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) repeat(2, 68px);
+      grid-template-rows: repeat(2, 56px);
+    }
+  }
+
+  &__image {
+    border-radius: 16px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 552px;
+    height: auto;
+
+    @include vp-767 {
+      width: 100%;
+      height: 234px;
+    }
+  }
+
+  &__btn {
+    @include vp-767 {
+      grid-column: span 1;
+
+      &--wide {
+        grid-column: span 2;
+      }
+
+      &--wide-2x {
+        grid-column: span 4;
+
+        @include vp-767 {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__stub {
+    width: 680px;
+    height: 552px;
+    background-color: $color-cornflower;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    border-radius: 16px;
+
+    @include vp-767 {
+      width: 100%;
+      height: 234px;
+    }
+  }
+
+  &__stub-text {
+    font-size: 32px;
+    line-height: 36px;
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}

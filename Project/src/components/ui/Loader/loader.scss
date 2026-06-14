@@ -1,0 +1,19 @@
+.loader {
+  display: flex;
+  pointer-events: none;
+
+  &__icon {
+    animation: rotateAnim ease-in-out 0.8s infinite;
+    z-index: 5;
+  }
+
+  @keyframes rotateAnim {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

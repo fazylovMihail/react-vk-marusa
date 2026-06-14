@@ -1,0 +1,44 @@
+@use "../../../app/styles/global/mixins" as *;
+
+.header {
+  padding: 24px 0;
+
+  @include vp-767 {
+    padding: 16px 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 144px 1fr auto;
+    align-items: center;
+    column-gap: 80px;
+
+    @include vp-767 {
+      grid-template-columns: 1fr repeat(3, 24px);
+      column-gap: 20px;
+    }
+  }
+
+  &__logo {
+    width: 144px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+
+    @include vp-767 {
+      width: 81px;
+    }
+  }
+
+  &__logo-image {
+    @include vp-767 {
+      height: 18px;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+  }
+}
